@@ -57,6 +57,8 @@ def unfollow(api, uid):
 def bak_following(user):
     with open(unfollow_url, 'a+', encoding="utf-8") as f:
         f.write(user.screen_name)
+        f.write(" ")
+        f.write(user.screen_name)
         f.write("\n")
 
 
