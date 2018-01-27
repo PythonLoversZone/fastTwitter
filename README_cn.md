@@ -7,6 +7,7 @@
 ![](screen/config.png)
 # 使用步骤 3
 打开文件 'main.py', 鼠标右键 ,选择 `run` 命令之后程序会正常开始运行
+
 ![](screen/run.png)
 
 # 修改你要关注的人
@@ -15,6 +16,11 @@
 
 # 祝你好运
 如果在使用过程中有任何问题请随时联系
+
+# 相关链接
+- 名单来自于[知乎](https://www.zhihu.com/question/26499017)
+- 日志配置参考:[Python 日志功能详解](https://blog.igevin.info/posts/python-log/)
+- 使用的库:[tweepy](http://docs.tweepy.org/en/latest/getting_started.html)
 
 # license
 ```

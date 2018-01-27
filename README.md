@@ -19,6 +19,11 @@ if you want to add or change followers, you can operate the file `follow.txt`
 
 if you have any question,please to concat me.
 
+# about
+- name list from [zhihu](https://www.zhihu.com/question/26499017)
+- logger config:[Python 日志功能详解](https://blog.igevin.info/posts/python-log/)
+- used library :[tweepy](http://docs.tweepy.org/en/latest/getting_started.html)
+
 # license
 ```
 MIT License
