@@ -8,8 +8,10 @@
 ![](screen/config.png)
 
 # 使用步骤 3
-打开文件 'main.py', 鼠标右键 ,选择 `run` 命令之后程序会正常开始运行
-
+- 功能1: 批量关注
+> 打开文件 'follow.py',右键,选择 `run` 命令。
+- 功能2: 批量取关
+> 打开文件 'unfollow.py', 右键,选择`run` 命令。 这是个危险的操作,所以会在`config`目录生成一个名为`unfollow.txt`的备份文件，以便随时加回来。
 ![](screen/run.png)
 
 # 修改你要关注的人
