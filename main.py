@@ -13,54 +13,22 @@
  Description: 
  Copyright(©) 2017 by xiaomo.
 """
-import json
 import logging.config
 
-import tweepy
 from tweepy import TweepError
 
-base = 'config/'
-follower_url = base + 'follow.txt'
-log_config_url = base + 'logging_config.ini'
-api_config = base + 'cfg.json'
+from app_config import get_name_list, log_config_url
+from tweepy_api import get_api
+
 logging.config.fileConfig(log_config_url)
 
 # create logger
 logger = logging.getLogger(__name__)
 
 
-# 获取tweepy的api实例
-def get_api(cfg):
-    auth = tweepy.OAuthHandler(cfg['consumer_key'], cfg['consumer_secret'])
-    auth.set_access_token(cfg['access_token'], cfg['access_token_secret'])
-    return tweepy.API(auth)
-
-
-# 读取文件中需要follow的名字列表
-def get_name_list():
-    name_list = dict()
-    with open(follower_url, 'r', encoding='utf-8') as f:
-        for line in f:
-            names = line.split(" ")
-            if len(names) < 2:
-                continue
-            first = names[0]
-            second = names[1]
-            name_list.setdefault(first, second)
-        return name_list
-
-
-# 读取配置文件
-def get_config():
-    with open(api_config) as f:
-        setting = json.load(f)
-        return setting
-
-
 # 主函数
 def main():
-    cfg = get_config()
-    api = get_api(cfg)
+    api = get_api()
     name_list = get_name_list()
     for (key, value) in name_list.items():
         try:
