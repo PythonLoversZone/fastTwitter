@@ -1,17 +1,17 @@
 # Usage step 1
-create an application at [application manager](https://apps.twitter.com/app/new)
-you will get the information that we need
+create an application at [application manager](https://apps.twitter.com/app/new), you will get the information that we need
 ![](screen/key.png)
-
 
 # Usage step 2
 open the file 'cfg.json', then update to yours
-
+![](screen/config.png)
 # Usage step 3
 open the file 'main.py', then right click ,choose the `run` command, the application will be work
+![](screen/run.png)
 
 # change your follower
 if you want to add or change followers, you can operate the file `follow.txt`
+![](screen/followers.png)
 
 # Gold luck to you
 if you have any question,please to concat me.

@@ -60,14 +60,11 @@ def main():
     name_list = get_name_list()
     for (key, value) in name_list.items():
         try:
-            me = api.me()
-            show_friendship = api.show_friendship(me.screen_name, value)
-            logger.info("%s", show_friendship)
-            # friendship = api.create_friendship(value)
-            # if friendship:
-            #    logger.info("following %s" % friendship.screen_name)
-            # else:
-            #    logger.warning('%s :%s is not found' % (key, value))
+            friendship = api.create_friendship(value)
+            if friendship:
+                logger.info("following %s" % friendship.screen_name)
+            else:
+                logger.warning('%s :%s is not found' % (key, value))
         except TweepError as e:
             logger.error("%s ,error: %s" % (value.replace("\n", ""), e))
 
