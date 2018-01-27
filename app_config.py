@@ -19,6 +19,7 @@ base = 'config/'
 follower_url = base + 'follow.txt'
 log_config_url = base + 'logging_config.ini'
 api_config = base + 'cfg.json'
+unfollow_url = base + 'unfollow.txt'
 
 
 # 读取文件中需要follow的名字列表

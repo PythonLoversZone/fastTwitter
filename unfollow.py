@@ -10,14 +10,14 @@
  email: xiaomo@xiamoo.info
  QQ_NO: 83387856
  Date: 2018/1/27 10:25 
- Description: 
+ Description: 取消关注(此操作请慎用)
  Copyright(©) 2017 by xiaomo.
 """
 import logging.config
 
 from tweepy import TweepError
 
-from app_config import get_name_list, log_config_url
+from app_config import log_config_url, unfollow_url
 from tweepy_api import get_api
 
 logging.config.fileConfig(log_config_url)
@@ -29,16 +29,26 @@ logger = logging.getLogger(__name__)
 # 主函数
 def main():
     api = get_api()
-    name_list = get_name_list()
-    for (key, value) in name_list.items():
+    me = api.me()
+    uid_list = api.friends_ids(me.screen_name)
+    for uid in uid_list:
         try:
-            friendship = api.create_friendship(value)
+            friend = api.get_user(uid)
+            friendship = api.destroy_friendship(friend.screen_name)
             if friendship:
-                logger.info("following %s" % friendship.screen_name)
+                logger.info("unfollow %s" % friendship.screen_name)
+                bak_following(friend)
             else:
-                logger.warning('%s :%s is not found' % (key, value))
+                logger.warning('%s unfollow fail...' % friend.screen_name)
         except TweepError as e:
-            logger.error("%s ,error: %s" % (value.replace("\n", ""), e))
+            logger.error("error: %s" % e)
+
+
+# 备份被取消的关注者，可以使用批量关注再加回来
+def bak_following(user):
+    with open(unfollow_url, 'a+', encoding="utf-8") as f:
+        f.write(user.screen_name)
+        f.write("\n")
 
 
 # 入口
