@@ -4,6 +4,7 @@
 
 # 使用步骤 2
 打开 'cfg.json'文件, 修改成你自己账号的配置
+
 ![](screen/config.png)
 
 # 使用步骤 3
@@ -13,6 +14,7 @@
 
 # 修改你要关注的人
 如果你想添加或修改想要follow的人, 你可修改 `follow.txt`这个文件
+
 ![](screen/followers.png)
 
 # 祝你好运
