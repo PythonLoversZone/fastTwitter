@@ -32,16 +32,25 @@ def main():
     me = api.me()
     uid_list = api.friends_ids(me.screen_name)
     for uid in uid_list:
-        try:
-            friend = api.get_user(uid)
-            friendship = api.destroy_friendship(friend.screen_name)
-            if friendship:
-                logger.info("unfollow %s" % friendship.screen_name)
-                bak_following(friend)
-            else:
-                logger.warning('%s unfollow fail...' % friend.screen_name)
-        except TweepError as e:
-            logger.error("error: %s" % e)
+        friendship = unfollow(api, uid)
+        if friendship:
+            logger.info("unfollow %s" % friendship.screen_name)
+            bak_following(friendship)
+        else:
+            logger.warning('%s unfollow fail...' % friendship.screen_name)
+
+
+# 取消关注的实际操作
+def unfollow(api, uid):
+    try:
+        friend = api.get_user(uid)
+        friendship = api.destroy_friendship(friend.screen_name)
+        if friendship:
+            logger.info("unfollow %s" % friendship.screen_name)
+        return friendship
+    except TweepError as e:
+        logger.error("error: %s" % e)
+    return None
 
 
 # 备份被取消的关注者，可以使用批量关注再加回来
