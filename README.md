@@ -7,6 +7,7 @@ create an application at [application manager](https://apps.twitter.com/app/new)
 open the file 'cfg.json', then update to yours
 
 ![](screen/config.png)
+
 # Usage step 3
 open the file 'main.py', then right click ,choose the `run` command, the application will be work
 ![](screen/run.png)
