@@ -10,9 +10,9 @@ open the file 'cfg.json', then update to yours
 ![](screen/config.png)
 
 # Usage step 3
-- feature 1: follow
+- feature 1: batch follow
 > open the file 'follow.py', then right click ,choose the `run` command
-- feature 2: unfollow
+- feature 2: batch unfollow
 > open the file 'unfollow.py', then right click ,choose the `run` command。 this operation is dangerous,so will generate a bak file named `unfollow.txt` in directory `config`
 
 ![](screen/run.png)
