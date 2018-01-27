@@ -1,4 +1,4 @@
-# [中文说明](README_cn.md)
+# [中文说明](screen/README_cn.md)
 # Usage step 1
 create an application at [application manager](https://apps.twitter.com/app/new), you will get the information that we need
 
