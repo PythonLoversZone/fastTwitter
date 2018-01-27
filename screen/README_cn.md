@@ -1,22 +1,20 @@
-# [中文说明](README_cn.md)
-# Usage step 1
-create an application at [application manager](https://apps.twitter.com/app/new), you will get the information that we need
+# 使用步骤1
+在 [application manager](https://apps.twitter.com/app/new) 上创建一个app, 你将会得到我们所需要的相关信息
 ![](screen/key.png)
 
-# Usage step 2
-open the file 'cfg.json', then update to yours
+# 使用步骤 2
+打开 'cfg.json'文件, 修改成你自己账号的配置
 ![](screen/config.png)
-# Usage step 3
-open the file 'main.py', then right click ,choose the `run` command, the application will be work
+# 使用步骤 3
+打开文件 'main.py', 鼠标右键 ,选择 `run` 命令之后程序会正常开始运行
 ![](screen/run.png)
 
-# change your follower
-if you want to add or change followers, you can operate the file `follow.txt`
+# 修改你要关注的人
+如果你想添加或修改想要follow的人, 你可修改 `follow.txt`这个文件
 ![](screen/followers.png)
 
-# Good luck to you
-
-if you have any question,please to concat me.
+# 祝你好运
+如果在使用过程中有任何问题请随时联系
 
 # license
 ```
